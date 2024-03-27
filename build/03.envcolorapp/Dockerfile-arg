@@ -1,0 +1,9 @@
+FROM node:14
+WORKDIR /app
+COPY . .
+
+RUN npm install
+ARG COLOR=red #ARG는 빌드에만 사용할 환경 변수를 지정할 때 사용
+USER node
+EXPOSE 3000
+CMD ["npm", "start"]
