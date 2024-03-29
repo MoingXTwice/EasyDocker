@@ -12,7 +12,7 @@
 - `run [OPTIONS] IMAGE [COMMAND] [ARG...]` 컨테이너 생성 및 실행 (create and start)
   - `-d, --detach` 백그라운드에서 컨테이너 실행
   - `--name string` 컨테이너 이름 지정
-  - `-p, --publish list` 컨테이너 포트를 호스트에 연결 ***containerPort:hostPort***
+  - `-p, --publish list` 컨테이너 포트를 호스트에 연결 ***hostPort:containerPort***
   - `--env list` 환경 변수 설정
 - `create [OPTIONS] IMAGE [COMMAND] [ARG...]` 컨테이너 생성
   - `run`과 비슷
