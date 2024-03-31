@@ -14,8 +14,10 @@ FROM openjdk:11-jre-slim
 
 WORKDIR /app
 
-COPY --from=build /app/build/libs/*.jar /app/leafy.jar
+COPY --from=build /app/build/libs/Leafy-0.0.1-SNAPSHOT.jar /app/leafy.jar
 
 EXPOSE 8080
+EXPOSE 5005
+
 ENTRYPOINT ["java"]
-CMD ["-jar", "leafy.jar"]
+CMD ["-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005", "-jar", "leafy.jar"]
